@@ -1,0 +1,276 @@
+:root{
+--main-color:crimson;
+--secondary-color:red;
+--dark-color:#444;
+--light-color:#fafafa;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Tangerine&display=swap');  
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: var(--light-color);
+    color:var(--dark-color);
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+::selection {
+  background: var(--main-color);
+  color: var(--light-color);
+}
+h1,h2,h3 {
+  font-family: 'Tangerine', cursive;
+}
+p {
+  line-height: 1.5em;
+}
+a {
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+.small{
+  font-size: small;
+}
+.center-text{
+  text-align: center;
+}
+.italic {
+  font-style: italic;
+}
+.light-text {
+  color: var(--light-color);
+}
+.two-lines {
+  height: 45px;
+}
+.three-lines {
+  height: 67.5px;
+}
+
+.hero {
+    background: linear-gradient(to right,rgba(0,0,0,0.7),rgba(0,0,0,0.1)),url(./images/pizza-hero-image.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    padding: 0 1em;
+}
+
+.header {
+  background: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center; 
+  justify-content: center;
+  height: 80px;
+  font-weight: bold;
+  color: var(--light-color);
+}
+.title {
+    color: var(--light-color);
+    font-size: 1.5em;
+    display:flex;
+    align-items: center;
+}
+.menu-button {
+    position: fixed;
+    right: 2em;
+    color: var(--light-color);
+    mix-blend-mode: difference;
+}
+
+.sidenav {
+  height: 90vh;
+  position: fixed;
+  top: 0;
+  right: -500px;
+  background: linear-gradient(-45deg,var(--secondary-color),var(--main-color),var(--secondary-color));
+  border-left: 4px solid var(--main-color);
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  transition: 400ms;
+  z-index: 1;
+}
+.sidenav:target {
+  right: 0;
+  transition: 400ms;
+}
+
+.button-close {
+  position: absolute;
+  top: .75em;
+  right: 1em;
+  color: var(--light-color);
+  font-size: 2em;
+  padding: 10em;
+  font-weight: bold;
+}
+.sidenav a {
+  font-size: 1.5em;
+  padding: .5em;
+}
+.white-button {
+  font-size: 1.5em;
+  text-decoration: none;
+  background-color: var(--light-color);
+  color: var(--main-color);
+  border: 4px solid var(--main-color);
+  padding: 0.5em 1em;
+  width: fit-content;
+}
+.white-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  border: 4px solid var(--light-color);
+  transition: 400ms;
+}
+
+.hero-div {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-div h2 {
+    font-size: clamp(2.5em,10vw,5em);
+    margin-bottom: 0;
+    padding: .1em 0;
+    border-bottom: 10px solid var(--light-color);
+}
+.hero p {
+    font-size: clamp(1.5em,2.5vw,3em);
+    font-style: italic;
+}
+.red-button {
+    font-size: 1.5em;
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  border: 4px solid var(--main-color);
+  padding: 0.5em 1em;
+}
+.red-button:hover {
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+  transition: 400ms;
+}
+
+.section-title {
+  font-size: 3em;
+}
+
+.products {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.product {
+  width: 350px;
+}
+.product-image {
+  height: 200px;
+  width: 350px;
+  object-fit: cover;
+  background-position: center;
+}
+.product-name {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: .5em;
+}
+.product-price {
+  font-size: clamp(1.5em,2.5vw,3em);
+  font-weight: bold;
+  color: var(--main-color);
+  margin-top: 0;
+}
+
+.light-background {
+  background: var(--light-color);
+  color:var(--dark-color)
+}
+.dark-background {
+  background: var(--dark-color);
+  color: var(--light-color);
+}
+
+.booking {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  display: grid;
+  align-self: center;
+  width: clamp(300px,90%,550px);
+  z-index: 1;
+  background-color: var(--main-color);
+  padding: 2em 1em;
+  box-shadow: 1px 1px 1.5em var(--dark-color);
+  gap: 1em;
+  visibility: hidden;
+}
+.booking:target {
+  visibility: visible;
+}
+.booking input {
+  height: 30px;
+}
+.booking button {
+  height: 35px;
+}
+.booking h3 {
+  font-size: 50px;
+  margin: 0;
+  padding: .1em 0;
+  color: var(--light-color);
+}
+
+.modal {
+  z-index: 1;
+}
+
+.four-o-four {
+  display: grid;
+  justify-content: center;
+  margin: 4em;
+}
+.four-o-four strong, .four-o-four p {
+  text-align: center;
+}
+.four-o-four strong {
+  font-size: 4em;
+}
+.four-o-four p {
+  font-size: 2em;
+}
+
+.footer {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+      justify-content: left;
+      transition: 400ms;
+  }
+}
