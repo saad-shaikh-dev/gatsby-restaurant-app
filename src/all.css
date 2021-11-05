@@ -55,60 +55,56 @@ a {
     background-position: center;
     background-size: cover;
     padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.header {
-  background: transparent;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center; 
-  justify-content: center;
-  height: 80px;
-  font-weight: bold;
-  color: var(--light-color);
-}
 .title {
     color: var(--light-color);
     font-size: 1.5em;
-    display:flex;
-    align-items: center;
+    font-weight: bold;
 }
-.menu-button {
-    position: fixed;
-    right: 2em;
-    color: var(--light-color);
-    mix-blend-mode: difference;
+.nav-toggle, .nav-toggle-label {
+  position: fixed ;
+  right: 2em;
+  top: 1em;
+  height: 100px;
+  width: 110px;
+  display: grid;
+  grid-auto-flow: column;
+  place-items: center;
+  font-weight: bold;
+  color: var(--light-color);
+  mix-blend-mode:difference;
+}
+.nav-toggle {
+  opacity: 0;
+  z-index: 2;
+}
+.nav-toggle-label {
+  z-index: 1;
+}
+.nav-toggle:checked ~ .sidenav {
+  right: 0px;
+}
+.nav-toggle:checked ~ .nav-toggle-label::before {
+  content: "Close ";
 }
 
 .sidenav {
-  height: 90vh;
+  height: 100vh;
   position: fixed;
   top: 0;
   right: -500px;
   background: linear-gradient(-45deg,var(--secondary-color),var(--main-color),var(--secondary-color));
+  margin: 0;
   border-left: 4px solid var(--main-color);
-  padding: 2em;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1em;
   transition: 400ms;
-  z-index: 1;
-}
-.sidenav:target {
-  right: 0;
-  transition: 400ms;
-}
-
-.button-close {
-  position: absolute;
-  top: .75em;
-  right: 1em;
-  color: var(--light-color);
-  font-size: 2em;
-  padding: 10em;
-  font-weight: bold;
 }
 .sidenav a {
   font-size: 1.5em;
@@ -130,14 +126,7 @@ a {
   transition: 400ms;
 }
 
-.hero-div {
-    height: 85%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.hero-div h2 {
+.hero h2 {
     font-size: clamp(2.5em,10vw,5em);
     margin-bottom: 0;
     padding: .1em 0;
@@ -240,9 +229,11 @@ a {
   padding: .1em 0;
   color: var(--light-color);
 }
-
-.modal {
-  z-index: 1;
+.modal-close {
+  position: fixed;
+  top: .75em;
+  right: 1em;
+  font-size: 1.3em;
 }
 
 .four-o-four {

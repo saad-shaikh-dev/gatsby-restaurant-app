@@ -11,7 +11,7 @@ const Booking = () => {
             <a href="#">
                 <button type="submit" id="send-message">Send request</button>
             </a>
-            <a className="button-close modal" href="#">x</a>
+            <a className="modal-close" href="#">x</a>
         </form>
     )
 }

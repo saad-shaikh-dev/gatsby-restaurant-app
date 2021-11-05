@@ -11,8 +11,8 @@ import SideNav from "../components/SideNav"
 const IndexPage = () => {
   return (
     <Fragment>
-      <SideNav />
       <Hero />
+      <SideNav />
       <MainCourse />
       <Desserts />
       <Drinks />
