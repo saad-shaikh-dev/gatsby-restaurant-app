@@ -73,7 +73,7 @@ a {
   width: 110px;
   display: grid;
   grid-auto-flow: column;
-  place-items: center;
+  place-items:center;
   font-weight: bold;
   color: var(--light-color);
   mix-blend-mode:difference;
@@ -259,9 +259,9 @@ a {
   padding-top: 1em;
 }
 
-@media only screen and (max-width: 600px) {
-  .title {
-      justify-content: left;
-      transition: 400ms;
+@media only screen and (max-width: 500px) {
+  .nav-toggle, .nav-toggle-label {
+    top: 1em;
+    right: .25em;
   }
 }
